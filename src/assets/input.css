@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body{
+    background-color: #000;
+}
+
+.current-row td{
+    background-color: black !important;
+}
+
+.el-dialog{
+    box-shadow: 0px 0px 4px #a3a5a9 !important;
+}
+
+.el-popper{
+    background-color: #000 !important;
+}
+
+.resultPopper{
+    background-color: #fff !important;
+}
+
+.el-popconfirm__action{
+    margin-top: 0 !important;
+    text-align: center;
+}
+
+.el-popper__arrow:before{
+    background-color: #000 !important;
+}
+.el-button.is-disabled{
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.device_icon svg{
+    stroke-width:20;
+    stroke:#292222 ;
+}
+
+
+/* agGrid */
+.ag-header-cell-menu-button{
+    display: none !important;
+}
+.ag-header-cell-filter-button{
+    display: none !important;
+}
