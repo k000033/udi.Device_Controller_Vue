@@ -16,7 +16,8 @@ const rowDblclick = (data) => {
 
   if (deciveInfo) {
     deciveInfo.ORDER_ID = data._ORDER_ID;
-    deciveInfo.DESCRIPTION = data.DESCRIPTION;
+    deciveInfo.DESCRIPTION = data.NAME;
+    deciveInfo.MEMO = data.DESCRIPTION;
   }
   openSelectOrderIdDialog.value = false;
 };
@@ -38,7 +39,8 @@ const selected = () => {
   // 如果有找到設備，修改批次名稱，描述
   if (deciveState) {
     deciveState.ORDER_ID = data._ORDER_ID;
-    deciveState.DESCRIPTION = data.DESCRIPTION;
+    deciveState.DESCRIPTION = data.NAME;
+    deciveState.MEMO = data.DESCRIPTION;
   }
 
   const device = deviceList.value.find((x) => x.DEVICE_ID == data.DEVICE_ID);
@@ -54,6 +56,12 @@ const selected = () => {
 // 關閉 Dialog
 const closeDialog = () => {
   openSelectOrderIdDialog.value = false;
+};
+
+const tableRowClassName = (row, rowIndex) => {
+  if (row.row.STATE == 2) {
+    return 'closed';
+  }
 };
 </script>
 
@@ -82,6 +90,7 @@ const closeDialog = () => {
       :highlight-current-row="true"
       @row-dblclick="rowDblclick"
       @current-change="handleCurrentChange"
+      :row-class-name="tableRowClassName"
     >
       <el-table-column property="DEVICE_ID" label="date" />
       <el-table-column property="JOB_ID" label="date" />
@@ -94,3 +103,4 @@ const closeDialog = () => {
     </div>
   </el-dialog>
 </template>
+<style scoped></style>

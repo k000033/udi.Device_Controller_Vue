@@ -8,7 +8,7 @@ export const useDeviceControlSignalR = () => {
   /**
    * 測試 URL
    */
-  // window.origin = 'http://192.168.116.166';
+  //window.origin = 'http://192.168.116.166';
   //  const signalRAPI = "http://localhost:5059/SignalServer";
   // const getDeviceControlAPI =
   //   "http://localhost:5059/api/Device/getDeviceControl";
@@ -73,7 +73,6 @@ export const useDeviceControlSignalR = () => {
           dev.BREATHING_LIGHT = item.BREATHING_LIGHT;
           dev.BREATHING_ALARM = item.BREATHING_ALARM;
           dev.BREATHING_ORDER = item.BREATHING_ORDER;
-          dev.DESCRIPTION = item.DESCRIPTION;
           dev.DEVICE_ID = item.DEVICE_ID;
           dev.QTY_ASSIGN = item.QTY_ASSIGN;
           dev.QTY_RATE = item.QTY_RATE;

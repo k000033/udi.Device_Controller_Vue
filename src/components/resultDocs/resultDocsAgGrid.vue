@@ -20,7 +20,7 @@ const columnDefs = [
     field: 'WO_ID',
     filter: 'agTextColumnFilter',
     sortable: true,
-    width: '160px'
+    width: '160'
   },
   {
     headerName: '設備',
@@ -30,18 +30,32 @@ const columnDefs = [
     width: '120px'
   },
   {
-    headerName: '品項',
+    headerName: '貨號',
     field: 'ITEM_ID',
     sortable: true,
     filter: 'agTextColumnFilter',
     width: '120px'
   },
   {
-    headerName: '門市',
+    headerName: '品名',
+    field: 'ITEM_NAME',
+    sortable: true,
+    filter: 'agTextColumnFilter',
+    width: '180px'
+  },
+  {
+    headerName: '店號',
     field: 'SITE_ID',
     filter: 'agTextColumnFilter',
     sortable: true,
     width: '120px'
+  },
+  {
+    headerName: '店名',
+    field: 'SITE_NAME',
+    filter: 'agTextColumnFilter',
+    sortable: true,
+    width: '180px'
   },
   {
     headerName: '數量',
@@ -58,7 +72,12 @@ const columnDefs = [
     filter: 'agTextColumnFilter',
     sortable: true,
     width: '140px',
-    cellStyle: { 'text-align': 'right' }
+    cellStyle: { 'text-align': 'right' },
+    aggFunc: 'sum',
+    valueFormatter: (params) => {
+      // 格式化显示为小数点后 3 位
+      return params.value ? params.value.toFixed(3) : 0;
+    }
   },
   {
     headerName: '條碼',
@@ -95,6 +114,10 @@ const getRowStyle = (param) => {
   }
 };
 
+window.addEventListener('resize', () => {
+  window.resultDocsGridApi.sizeColumnsToFit();
+});
+
 const localeText = {
   page: '頁',
   more: '更多',
@@ -121,7 +144,7 @@ const localeText = {
 
 onBeforeMount(() => {
   autoGroupColumnDef.value = {
-    minWidth: 300
+    width: 250
   };
   grandTotalRow.value = 'bottom';
 });

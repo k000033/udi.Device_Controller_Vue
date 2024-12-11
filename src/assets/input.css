@@ -48,3 +48,7 @@ html,body{
 .ag-header-cell-filter-button{
     display: none !important;
 }
+
+.closed td {
+   color:  #aaa !important;
+  }

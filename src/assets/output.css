@@ -875,6 +875,11 @@ video {
   text-align: right;
 }
 
+.tw-text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .tw-text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -888,11 +893,6 @@ video {
 .tw-text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.tw-text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .tw-font-bold {
@@ -1012,6 +1012,10 @@ html,body{
 
 .ag-header-cell-filter-button{
   display: none !important;
+}
+
+.closed td {
+  color:  #aaa !important;
 }
 
 .before\:tw-absolute::before {
